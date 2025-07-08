@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlyGo - Flight Booking App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>FlyGo</h1>
+                <img src="./assets/logof.jpg" alt="">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Flights</a></li>
+               
+                <li><a href="#">My Bookings</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button id="loginBtn">Login</button>
+                <button id="signupBtn">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Search Form -->
+    <section class="hero">
+        <div class="search-container">
+            <div class="tabs">
+                <button class="tab active">Round Trip</button>
+                <button class="tab">One Way</button>
+                <button class="tab">Multi-City</button>
+            </div>
+            <form id="flightSearchForm">
+                <div class="form-group">
+                    <label for="from">From</label>
+                    <input type="text" id="from" placeholder="City or Airport" required>
+                </div>
+                <div class="form-group">
+                    <label for="to">To</label>
+                    <input type="text" id="to" placeholder="City or Airport" required>
+                </div>
+                <div class="form-group">
+                    <label for="departure">Departure</label>
+                    <input type="date" id="departure" required>
+                </div>
+                <div class="form-group">
+                    <label for="return">Return</label>
+                    <input type="date" id="return">
+                </div>
+                <div class="form-group">
+                    <label for="passengers">Passengers</label>
+                    <select id="passengers">
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="class">Class</label>
+                    <select id="class">
+                        <option value="economy">Economy</option>
+                        <option value="premium">Premium Economy</option>
+                        <option value="business">Business</option>
+                        <option value="first">First Class</option>
+                    </select>
+                </div>
+                <button type="submit" class="search-btn">Search Flights</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Popular Destinations Section -->
+<section class="popular-destinations">
+    <div class="container">
+        <h2>Popular Destinations from Delhi</h2>
+        <div class="destinations-grid" id="destinationsGrid">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Trip Ideas Section -->
+<section class="trip-ideas">
+    <div class="container">
+        <h2>Trip Ideas from India</h2>
+        <div class="ideas-grid" id="ideasGrid">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </div>
+</section>
+
+    <!-- Flight Results Section (Initially Hidden) -->
+    <section class="flight-results" id="flightResults" style="display: none;">
+        <h2>Available Flights</h2>
+        <div class="filters">
+            <div class="filter">
+                <label>Sort By:</label>
+                <select id="sortBy">
+                    <option value="price">Price (Low to High)</option>
+                    <option value="duration">Duration (Shortest)</option>
+                    <option value="departure">Departure Time</option>
+                </select>
+            </div>
+            <div class="filter">
+                <label>Price Range:</label>
+                <input type="range" id="priceRange" min="0" max="10000" step="500" value="10000">
+                <span id="priceValue">Up to ₹10,000</span>
+            </div>
+        </div>
+        <div class="results-container" id="resultsContainer">
+            <!-- Flight cards will be inserted here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Booking Form (Initially Hidden) -->
+    <section class="booking-form" id="bookingForm" style="display: none;">
+        <h2>Complete Your Booking</h2>
+        <form id="passengerDetailsForm">
+            <div class="form-section">
+                <h3>Passenger Details</h3>
+                <div id="passengerFields">
+                    <!-- Passenger fields will be added here based on number of passengers -->
+                </div>
+            </div>
+            <div class="form-section">
+                <h3>Contact Information</h3>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" id="backToResults">Back to Results</button>
+                <button type="submit" class="book-now-btn">Book Now</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Confirmation Section (Initially Hidden) -->
+    <section class="confirmation" id="confirmation" style="display: none;">
+        <div class="confirmation-card">
+            <i class="fas fa-check-circle"></i>
+            <h2>Booking Confirmed!</h2>
+            <p id="confirmationDetails"></p>
+            <button id="viewBookingBtn">View My Booking</button>
+            <button id="newSearchBtn">New Search</button>
+        </div>
+    </section>
+
+    <!-- My Bookings Section (Initially Hidden) -->
+    <section class="my-bookings" id="myBookings" style="display: none;">
+        <h2>My Bookings</h2>
+        <div class="bookings-container" id="bookingsContainer">
+            <!-- Bookings will be inserted here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="auth-btn">Login</button>
+            </form>
+            <p class="auth-switch">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" required>
+                </div>
+                <button type="submit" class="auth-btn">Sign Up</button>
+            </form>
+            <p class="auth-switch">Already have an account? <a href="#" id="showLogin">Login</a></p>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+    <div class="footer-container">
+        <!-- Top Section -->
+        <div class="footer-top">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Travel Guides</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Trust & Safety</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Other Services</h3>
+                <ul>
+                    <li><a href="#">Hotels</a></li>
+                    <li><a href="#">Flights</a></li>
+                    <li><a href="#">Flight + Hotel</a></li>
+                    <li><a href="#">Car Rentals</a></li>
+                    <li><a href="#">Travel Insurance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Top Destinations</h3>
+                <ul>
+                    <li><a href="#">Delhi</a></li>
+                    <li><a href="#">Mumbai</a></li>
+                    <li><a href="#">Bangalore</a></li>
+                    <li><a href="#">Goa</a></li>
+                    <li><a href="#">Dubai</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Subscribe to our Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="app-download">
+                    <p>Download our app</p>
+                    <div class="app-buttons">
+                        <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb5LOPUgzjbz_m4aVulC-GU5zu-30HBdYnAg&s" alt="Google Play"></a>
+                        <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa-JDxQbs5MCqbpmEsgcN_Apap-EZOn8SZLQ&s" alt="App Store"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Section -->
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 FlyGo. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

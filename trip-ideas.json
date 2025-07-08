@@ -1,0 +1,58 @@
+{
+  "tripIdeas": [
+    {
+      "id": "trip-1",
+      "title": "Goa Beach Vacation",
+      "image": "https://static.toiimg.com/thumb/msid-51892205,width-748,height-499,resizemode=4,imgsize-266613/Goa.jpg",
+      "description": "Relax on the beautiful beaches of Goa",
+      "price": "₹12,499",
+      "duration": "5D/4N",
+      "from": "Delhi"
+    },
+    {
+      "id": "trip-2",
+      "title": "Kashmir Valley",
+      "image": "https://t4.ftcdn.net/jpg/01/73/42/37/360_F_173423707_mA6K9osABnv53AIP4yJoJnbSVscWFAXs.jpg",
+      "description": "Explore the paradise on earth",
+      "price": "₹18,999",
+      "duration": "6D/5N",
+      "from": "Mumbai"
+    },
+    {
+      "id": "trip-3",
+      "title": "Kerala Backwaters",
+      "image": "https://i.ytimg.com/vi/k0zSkjAqet4/maxresdefault.jpg",
+      "description": "Houseboat experience in Alleppey",
+      "price": "₹15,299",
+      "duration": "4D/3N",
+      "from": "Bangalore"
+    },
+    {
+      "id": "trip-4",
+      "title": "Rajasthan Heritage Tour",
+      "image": "https://cdn.rajasthanstudio.com/wp-content/uploads/2022/02/Untitled-design-1-1024x536.jpg",
+      "description": "Explore the royal heritage of Rajasthan",
+      "price": "₹21,999",
+      "duration": "7D/6N",
+      "from": "Delhi"
+    },
+    {
+      "id": "trip-5",
+      "title": "Himachal Adventure",
+      "image": "https://www.honeymoonbug.com/blog/wp-content/uploads/2021/03/Activities-in-Himachal.jpg",
+      "description": "Manali and Shimla hill stations",
+      "price": "₹16,499",
+      "duration": "5D/4N",
+      "from": "Mumbai"
+    },
+    {
+      "id": "trip-6",
+      "title": "Andaman Islands",
+      "image": "https://images.wanderon.in/blogs/new/2023/07/top-min.jpg",
+      "description": "Crystal clear waters and white sand beaches",
+      "price": "₹24,999",
+      "duration": "6D/5N",
+      "from": "Chennai"
+    }
+  ]
+}

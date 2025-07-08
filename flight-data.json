@@ -1,0 +1,132 @@
+{
+  "flights": [
+    {
+      "id": "flight-1",
+      "airline": {
+        "name": "Air India",
+        "logo": "https://download.logo.wine/logo/Air_India/Air_India-Logo.wine.png"
+      },
+      "flightNumber": "AI101",
+      "from": "DEL",
+      "to": "BOM",
+      "departure": "08:00",
+      "arrival": "10:30",
+      "duration": "2h 30m",
+      "price": 4500,
+      "class": "economy",
+      "days": ["Monday", "Wednesday", "Friday", "Sunday"]
+    },
+    {
+      "id": "flight-2",
+      "airline": {
+        "name": "IndiGo",
+        "logo": "https://seekvectorlogo.com/wp-content/uploads/2022/01/indigo-vector-logo-2022.png"
+      },
+      "flightNumber": "6E205",
+      "from": "DEL",
+      "to": "BOM",
+      "departure": "10:15",
+      "arrival": "12:45",
+      "duration": "2h 30m",
+      "price": 5200,
+      "class": "economy",
+      "days": ["Daily"]
+    },
+    {
+      "id": "flight-3",
+      "airline": {
+        "name": "Vistara",
+        "logo": "https://thehardcopy.co/wp-content/uploads/Vistara-Images-7-1200x805.png"
+      },
+      "flightNumber": "UK925",
+      "from": "DEL",
+      "to": "BOM",
+      "departure": "14:30",
+      "arrival": "17:00",
+      "duration": "2h 30m",
+      "price": 6800,
+      "class": "business",
+      "days": ["Tuesday", "Thursday", "Saturday"]
+    },
+    {
+      "id": "flight-4",
+      "airline": {
+        "name": "SpiceJet",
+        "logo": "https://etimg.etb2bimg.com/photo/59125642.cms"
+      },
+      "flightNumber": "SG401",
+      "from": "DEL",
+      "to": "BLR",
+      "departure": "07:30",
+      "arrival": "10:15",
+      "duration": "2h 45m",
+      "price": 5800,
+      "class": "economy",
+      "days": ["Daily"]
+    },
+    {
+      "id": "flight-5",
+      "airline": {
+        "name": "GoAir",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIdaduhl4Wzyi4fFICR8nQPz7Bf6Um8N40-A&s"
+      },
+      "flightNumber": "G8351",
+      "from": "DEL",
+      "to": "BLR",
+      "departure": "12:00",
+      "arrival": "14:45",
+      "duration": "2h 45m",
+      "price": 5400,
+      "class": "economy",
+      "days": ["Monday", "Wednesday", "Friday", "Sunday"]
+    },
+    {
+      "id": "flight-6",
+      "airline": {
+        "name": "Air India",
+        "logo": "https://download.logo.wine/logo/Air_India/Air_India-Logo.wine.png"
+      },
+      "flightNumber": "AI503",
+      "from": "DEL",
+      "to": "HYD",
+      "departure": "09:15",
+      "arrival": "11:30",
+      "duration": "2h 15m",
+      "price": 4900,
+      "class": "economy",
+      "days": ["Daily"]
+    },
+    {
+      "id": "flight-7",
+      "airline": {
+        "name": "IndiGo",
+        "logo": "https://seekvectorlogo.com/wp-content/uploads/2022/01/indigo-vector-logo-2022.png"
+      },
+      "flightNumber": "6E731",
+      "from": "DEL",
+      "to": "HYD",
+      "departure": "16:45",
+      "arrival": "19:00",
+      "duration": "2h 15m",
+      "price": 5100,
+      "class": "economy",
+      "days": ["Daily"]
+    },
+    {
+      "id": "flight-8",
+      "airline": {
+        "name": "Vistara",
+        "logo": "https://thehardcopy.co/wp-content/uploads/Vistara-Images-7-1200x805.png"
+      },
+      "flightNumber": "UK817",
+      "from": "DEL",
+      "to": "MAA",
+      "departure": "11:30",
+      "arrival": "14:15",
+      "duration": "2h 45m",
+      "price": 6200,
+      "class": "premium",
+      "days": ["Tuesday", "Thursday", "Saturday", "Sunday"]
+    }
+  ]
+}
