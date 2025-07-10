@@ -497,7 +497,7 @@ nav {
 
 .confirmation-card h2 {
   margin-bottom: 1rem;
-  color: #003580;
+  color: #098000;
 }
 
 .confirmation-card p {
@@ -636,7 +636,7 @@ nav {
     background-color: #2d2d2d;
     color: #fff;
     padding: 3rem 0 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .footer-container {
